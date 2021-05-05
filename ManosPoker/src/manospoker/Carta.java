@@ -11,23 +11,23 @@ package manospoker;
  */
 public class Carta {
     
-    private String valor_;
+    private int valor_;
     
     private String palo_;
     
     
     public Carta(){ 
-        valor_=new String("");
+        valor_=0;
         palo_=new String("");
     }
-    public Carta(String valor, String palo){
+    public Carta(int valor, String palo){
         
-        valor_=new String(valor);
+        valor_=valor;
         palo_=new String(palo);
         
     }
 
-    public String getValor() {
+    public int getValor() {
         return valor_;
     }
 
@@ -35,7 +35,7 @@ public class Carta {
         return palo_;
     }
 
-    public void setValor(String valor) {
+    public void setValor(int valor) {
         this.valor_ = valor;
     }
 

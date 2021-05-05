@@ -7,7 +7,7 @@ package manospoker;
 
 /**
  *
- * @author sergi
+ * @author sergio
  */
 public class ManosPoker {
 
