@@ -47,10 +47,11 @@ public class Jugador {
        this.ordenarCartas();
        boolean salida=true;
        for(int i=1;i<mano_.size();i++){
-           if(mano_.get(i).getValor()!=(mano_.get(i-1).getValor()+1)){
+           if(mano_.get(i).getValor()!=(mano_.get(i-1).getValor()-1)){
                salida=false;
            }
        }
+       puntuacionDesempate_=mano_.get(0).getValor();//Ordenando de mayor a menor
        
        return salida;
    }
@@ -66,7 +67,9 @@ public class Jugador {
    }
    
    public boolean escaleraColor(){
-        return ((this.escalera()) && (this.color()));
+       boolean salida=(this.escalera()) && (this.color());
+       
+       return (salida);
    }
    
     /*
