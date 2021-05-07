@@ -16,12 +16,13 @@ public class Juego {
     
     private Baraja baraja_;
     private List<Jugador> jugadores_;
+    private Jugador ganador_;
     
     public Juego(){
         baraja_=new Baraja();
         jugadores_=new ArrayList();
-        
         baraja_.inicializar();
+        ganador_= new Jugador();
     }
     
     public void addJugador(Jugador jugador){
@@ -37,7 +38,7 @@ public class Juego {
         }
     }
     
-    public Jugador jugadorGanador(){
+    public void jugadorGanador(){
         for(int j=0;j<jugadores_.size();j++){
             jugadores_.get(j).asignacionPuntos();
         }
@@ -52,7 +53,7 @@ public class Juego {
                 }
             }
         }
-        return ganador;       
+        ganador_= ganador;    
     }
     
     public void nuevoJuego(){
@@ -61,8 +62,20 @@ public class Juego {
             jugadores_.get(i).retirarCartas();
         }
         baraja_.inicializar();
-        
-        this.repartirCartas();
+
     }
+
+    public Jugador getGanador() {
+        return ganador_;
+    }
+    
+    public int nJugadores(){
+        return jugadores_.size();
+    }
+    
+    public Jugador getJugador(int i){
+        return jugadores_.get(i);
+    }
+    
     
 }

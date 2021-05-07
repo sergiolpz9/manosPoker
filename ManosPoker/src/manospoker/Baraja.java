@@ -25,7 +25,7 @@ public class Baraja {
     public void inicializar(){
         cartas_.clear();
         String palos[]={"corazones","diamantes","picas","treboles"};
-        for (int i=1;i<14;i++){
+        for (int i=2;i<15;i++){
             for (int k=0;k<4;k++){
                 Carta c= new Carta(i,palos[k]);
                 cartas_.add(c);

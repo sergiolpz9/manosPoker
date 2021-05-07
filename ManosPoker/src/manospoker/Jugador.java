@@ -47,8 +47,9 @@ public class Jugador {
    public void printMano(){
        System.out.println("Jugador: "+id_);
        for(int i=0;i<mano_.size();i++){
-           System.out.println(String.valueOf(mano_.get(i).getValor())+" de "+mano_.get(i).getPalo());
+           mano_.get(i).printCarta();
        }
+       System.out.println("-----------");
    }
    public void ordenarCartas(){
        Collections.sort(mano_); 
@@ -147,6 +148,24 @@ public class Jugador {
     public String getId() {
         return id_;
     }
+    public String getCombinacion(){
+        String combo=new String("");
+        switch(puntuacion_){
+            case 8 : combo="Escalera color";break;
+            case 7 : combo="Poker";break;
+            case 6 : combo="Full";break;
+            case 5 : combo="Color";break;
+            case 4 : combo="Escalera";break;
+            case 3 : combo="Trio";break;
+            case 2 : combo="Doble pareja";break;
+            case 1 : combo="Pareja";break;
+            case 0 : combo="Carta alta";break;
+            default: combo="error o trampa";
+        
+    }
+        return combo;
+    }
+    
     
     
    

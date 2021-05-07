@@ -42,6 +42,28 @@ public class Carta implements Comparable<Carta> {
     public void setPalo(String palo) {
         this.palo_ = palo;
     }
+    
+    public void printCarta(){
+        String valor;
+        switch(valor_){
+            case 2 : valor="Dos";break;
+            case 3 : valor="Tres";break;
+            case 4 : valor="Cuatro";break;
+            case 5 : valor="Cinco";break;
+            case 6 : valor="Seis";break;
+            case 7 : valor="Siete";break;
+            case 8 : valor="Ocho";break;
+            case 9 : valor="Nueve";break;
+            case 10 : valor="Diez";break;
+            case 11 : valor="J";break;
+            case 12: valor="Q";break;
+            case 13 : valor="K";break;
+            case 14 : valor="As";break;
+            default: valor="error";
+           
+        }
+        System.out.println(valor+" de "+palo_);
+    }
 
     @Override
     public int compareTo(Carta c) {

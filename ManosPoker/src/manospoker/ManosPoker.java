@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package manospoker;
+
+import java.util.Scanner;
 
 /**
  *
@@ -16,20 +19,53 @@ public class ManosPoker {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Scanner sc=new Scanner(System.in);
         Juego juego=new Juego();
-        Jugador ganador=new Jugador();
-        Jugador paco= new Jugador("paco");
-        Jugador pepe= new Jugador("pepe");
+        int nJugadores;
+        String nombreJugador;
+        String siNo;
+        boolean continuar=true;
+        boolean aux;
+           
+        System.out.print("Inserte el número de jugadores: ");
+        nJugadores=sc.nextInt();
         
-        juego.addJugador(paco);
-        juego.addJugador(pepe);
+        for(int i=0;i<nJugadores;i++){
+            System.out.print("Nombre del jugador: ");
+            nombreJugador=sc.next();
+            Jugador jugador=new Jugador(nombreJugador);
+            juego.addJugador(jugador);
+        }
+        while(continuar){
+        System.out.println("-----------------");
+        System.out.println("COMIENZA EL JUEGO");
+        System.out.println("-----------------");
         
-       juego.repartirCartas();
-        ganador=juego.jugadorGanador();
-        paco.printMano();
-        pepe.printMano();
-        System.out.println("El ganador es: "+ganador.getId());
+         juego.repartirCartas();
+         juego.jugadorGanador();
+         
+        for(int j=0;j<nJugadores;j++){
+            juego.getJugador(j).printMano();
+        }
+            
+        System.out.println("El ganador es: "+juego.getGanador().getId());
+        System.out.println("por: "+juego.getGanador().getCombinacion());
+        aux=true;
+        while(aux){
+        System.out.print("¿Desean jugar otra ronda? [S/N]: ");
+        siNo=sc.next();
+            
         
+        if(siNo.equals("s")||siNo.equals("S")){
+            juego.nuevoJuego();
+            aux=false;
+        }
+        else if(siNo.equals("n")||siNo.equals("N")){
+            continuar=false;
+            aux=false;
+        }
+        }
+    }
     }
     
 }
