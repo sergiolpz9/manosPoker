@@ -33,9 +33,10 @@ public class Baraja {
         }
     }
     public Carta getCarta(){//hay que mejorarlo
-        int sizeBaraja=cartas_.size();
+        
+        int sizeBaraja=cartas_.size()-1;
         int aleatorio = (int) Math.floor(Math.random()*(sizeBaraja-0+1)+0);
-        Carta carta = cartas_.get(aleatorio);
+        Carta carta=new Carta(cartas_.get(aleatorio).getValor(),cartas_.get(aleatorio).getPalo());
         cartas_.remove(aleatorio);
         return carta;
     }
