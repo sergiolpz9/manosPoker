@@ -6,6 +6,7 @@
 package manospoker;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -18,6 +19,14 @@ public class Jugador {
     private List<Carta> mano_;
     private int puntuacion_;
     private int puntuacionDesempate_;
+    
+    public Jugador(){
+        id_=new String("");
+        mano_= new ArrayList();
+        puntuacion_=0;
+        puntuacionDesempate_=0;
+        
+    }
     
     public Jugador(String id){
         id_=new String(id);
@@ -36,13 +45,15 @@ public class Jugador {
     }
     
    public void printMano(){
-       //método para imprimir en pantalla la mano del jugador
+       System.out.println("Jugador: "+id_);
+       for(int i=0;i<mano_.size();i++){
+           System.out.println(String.valueOf(mano_.get(i).getValor())+" de "+mano_.get(i).getPalo());
+       }
    }
    public void ordenarCartas(){
-       //método para ordenar las cartas de mayor a menor valor
-           
-       
+       Collections.sort(mano_); 
    }
+   
    public boolean escalera(){
        this.ordenarCartas();
        boolean salida=true;
@@ -123,4 +134,19 @@ public class Jugador {
            puntuacion_=0;
        }
    }
+
+    public int getPuntuacion() {
+        return puntuacion_;
+    }
+
+    public int getPuntuacionDesempate() {
+        return puntuacionDesempate_;
+    }
+
+    public String getId() {
+        return id_;
+    }
+    
+    
+   
 }

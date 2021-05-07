@@ -9,7 +9,7 @@ package manospoker;
  *
  * @author sergio
  */
-public class Carta {
+public class Carta implements Comparable<Carta> {
     
     private int valor_;
     
@@ -41,6 +41,19 @@ public class Carta {
 
     public void setPalo(String palo) {
         this.palo_ = palo;
+    }
+
+    @Override
+    public int compareTo(Carta c) {
+        if(c.getValor()==valor_){
+            return -1;
+        }
+        else if(c.getValor()<valor_){
+            return 0;
+        }
+        else{
+            return 1;
+        }
     }
     
     

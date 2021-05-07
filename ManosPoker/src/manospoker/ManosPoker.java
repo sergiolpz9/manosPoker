@@ -17,9 +17,18 @@ public class ManosPoker {
     public static void main(String[] args) {
         // TODO code application logic here
         Juego juego=new Juego();
+        Jugador ganador=new Jugador();
+        Jugador paco= new Jugador("paco");
+        Jugador pepe= new Jugador("pepe");
+        
+        juego.addJugador(paco);
+        juego.addJugador(pepe);
         
         juego.repartirCartas();
-        //ganador=juego.jugadorGanador();
+        ganador=juego.jugadorGanador();
+        paco.printMano();
+        pepe.printMano();
+        System.out.println("El ganador es: "+ganador.getId());
         
     }
     
