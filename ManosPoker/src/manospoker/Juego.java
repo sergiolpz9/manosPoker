@@ -38,6 +38,9 @@ public class Juego {
     }
     
     public Jugador jugadorGanador(){
+        for(int j=0;j<jugadores_.size();j++){
+            jugadores_.get(j).asignacionPuntos();
+        }
         Jugador ganador = jugadores_.get(0);
         for(int i=1;i<jugadores_.size();i++){
             if(ganador.getPuntuacion()<jugadores_.get(i).getPuntuacion()){

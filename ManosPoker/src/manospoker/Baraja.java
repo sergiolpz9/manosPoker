@@ -32,7 +32,7 @@ public class Baraja {
             }
         }
     }
-    public Carta getCarta(){
+    public Carta getCarta(){//hay que mejorarlo
         int sizeBaraja=cartas_.size();
         int aleatorio = (int) Math.floor(Math.random()*(sizeBaraja-0+1)+0);
         Carta carta = cartas_.get(aleatorio);

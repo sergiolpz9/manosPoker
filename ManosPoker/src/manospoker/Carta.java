@@ -45,10 +45,10 @@ public class Carta implements Comparable<Carta> {
 
     @Override
     public int compareTo(Carta c) {
-        if(c.getValor()==valor_){
+        if(c.getValor()<valor_){
             return -1;
         }
-        else if(c.getValor()<valor_){
+        else if(c.getValor()==valor_){
             return 0;
         }
         else{

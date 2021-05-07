@@ -74,6 +74,7 @@ public class Jugador {
                 salida=false;
             }
         }
+       puntuacionDesempate_=mano_.get(0).getValor();
        return salida;
    }
    

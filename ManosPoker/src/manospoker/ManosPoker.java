@@ -24,7 +24,7 @@ public class ManosPoker {
         juego.addJugador(paco);
         juego.addJugador(pepe);
         
-        juego.repartirCartas();
+       juego.repartirCartas();
         ganador=juego.jugadorGanador();
         paco.printMano();
         pepe.printMano();
